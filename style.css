@@ -1,0 +1,97 @@
+/* Basic styling for DEBESMSCAT registration page */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+header, footer {
+  background-color: #004080;
+  color: white;
+  text-align: center;
+  padding: 1em 0;
+}
+
+main {
+  max-width: 700px;
+  margin: 2em auto;
+  background-color: white;
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+form {
+  display: block;
+}
+
+fieldset {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 1.5em;
+  padding: 1em;
+}
+
+legend {
+  font-weight: bold;
+  color: #004080;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+input, select, textarea, button {
+  width: 100%;
+  padding: 0.5em;
+  margin-top: 0.3em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+button {
+  width: auto;
+  background-color: #004080;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 0.7em 1.2em;
+  margin-right: 0.5em;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #0066cc;
+}
+
+p, ul {
+  line-height: 1.5;
+}
+
+a {
+  color: #004080;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#privacy {
+  margin-top: 2em;
+  background-color: #eef4ff;
+  border-left: 4px solid #004080;
+  padding: 1em;
+  border-radius: 6px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9em;
+}

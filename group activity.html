@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Registration — DEBESMSCAT</title>
+  <link rel="stylesheet" href="style.css">
+  <!--
+    Plain single-file HTML registration page (no CSS, no JavaScript)
+    Save this as registration.html and open in a browser.
+    NOTE: Because there is no JavaScript, client-side interactions are limited.
+    To actually process submissions you'll need a server endpoint (e.g. /register)
+    or change the form action to a mailto: link or backend URL.
+  -->
+</head>
+<body>
+  <header>
+    <h1>Registration</h1>
+    <p>Please fill in the form to create an account. Fields marked with <strong>*</strong> are required.</p>
+  </header>
+
+  <main>
+    <form action="/register" method="post" enctype="application/x-www-form-urlencoded" novalidate>
+      <fieldset>
+        <legend>Personal information</legend>
+
+        <p>
+          <label for="fname">First name <strong>*</strong><br>
+            <input type="text" id="fname" name="first_name" required placeholder="Juan">
+          </label>
+        </p>
+
+        <p>
+          <label for="lname">Last name <strong>*</strong><br>
+            <input type="text" id="lname" name="last_name" required placeholder="Dela Cruz">
+          </label>
+        </p>
+
+        <p>
+          <label for="email">Email <strong>*</strong><br>
+            <input type="email" id="email" name="email" required placeholder="you@example.com">
+          </label>
+        </p>
+
+        <p>
+          <label for="phone">Phone (optional)<br>
+            <!-- simple pattern for digits, optional plus sign -->
+            <input type="tel" id="phone" name="phone" placeholder="09171234567" pattern="\+?[0-9\-\s]{7,20}">
+          </label>
+        </p>
+
+        <p>
+          <label for="role">Register as <strong>*</strong><br>
+            <select id="role" name="role" required>
+              <option value="">-- choose --</option>
+              <option value="student">Student</option>
+              <option value="staff">Staff</option>
+              <option value="guest">Guest</option>
+            </select>
+          </label>
+        </p>
+
+      </fieldset>
+
+      <fieldset>
+        <legend>Account details</legend>
+
+        <p>
+          <label for="username">Username <strong>*</strong><br>
+            <input type="text" id="username" name="username" required minlength="3" placeholder="username123">
+          </label>
+        </p>
+
+        <p>
+          <label for="password">Password <strong>*</strong><br>
+            <!-- pattern enforces at least 8 chars, one letter and one digit (basic) -->
+            <input type="password" id="password" name="password" required minlength="8" pattern="(?=.*[A-Za-z])(?=.*\d).{8,}" placeholder="At least 8 characters">
+          </label>
+        </p>
+
+        <p>
+          <label for="password_confirm">Confirm password <strong>*</strong><br>
+            <!-- Without JavaScript we cannot check equality client-side; server must verify. -->
+            <input type="password" id="password_confirm" name="password_confirm" required minlength="8" placeholder="Repeat password">
+          </label>
+        </p>
+
+      </fieldset>
+
+      <fieldset>
+        <legend>Optional details</legend>
+
+        <p>
+          <label for="course">Course / Department<br>
+            <input type="text" id="course" name="course" placeholder="e.g. Computer Science">
+          </label>
+        </p>
+
+        <p>
+          <label for="remarks">Remarks<br>
+            <textarea id="remarks" name="remarks" rows="4" placeholder="Anything else we should know..."></textarea>
+          </label>
+        </p>
+
+      </fieldset>
+
+      <p>
+        <label>
+          <input type="checkbox" name="agree" required>
+          I agree to the <a href="#privacy">privacy policy</a>. <strong>*</strong>
+        </label>
+      </p>
+
+      <p>
+        <button type="submit">Create account</button>
+        <button type="reset">Reset form</button>
+      </p>
+
+    </form>
+
+    <section id="privacy">
+      <h2>Privacy policy (short)</h2>
+      <p>This example page collects basic registration data. In a real deployment you must:</p>
+      <ul>
+        <li>Serve the page over HTTPS.</li>
+        <li>Process and store passwords securely on the server (use salted hashing).</li>
+        <li>Validate inputs server-side and do not trust client-side validation alone.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; DEBESMSCAT — Registration example</p>
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>
